@@ -1,6 +1,6 @@
-#
 %define snap 20070601
 Summary:	Maemo Data provider definitions
+Summary(pl.UTF-8):	Definicje dostawców danych dla Maemo
 Name:		maemo-providers-data
 Version:	0.0.%{snap}
 Release:	1
@@ -17,15 +17,22 @@ BuildRequires:	libtool
 #BuildRequires:	xulrunner-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%description
+Data provider definitions for the Maemo platform.
+
+%description -l pl.UTF-8
+Definicje dostawców danych dla platformy Maemo.
+
 %package devel
 Summary:	pkgconfig file for Maemo data provider definitions
+Summary(pl.UTF-8):	Plik pkgconfig dla definicji dostawców danych dla Maemo
 Group:		Development/Libraries
 
 %description devel
-pkgconfig file for Maemo data provider definitions
+pkgconfig file for Maemo data provider definitions.
 
-%description
-Data provider definitions for the Maemo platform
+%description devel -l pl.UTF-8
+Plik pkgconfig dla definicji dostawców danych dla Maemo.
 
 %prep
 %setup -q -n %{name}
@@ -54,4 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/modest/provider-data/provider-data.keyfile
 
 %files devel
+%defattr(644,root,root,755)
 %{_pkgconfigdir}/maemo-providers-data.pc
